@@ -1,0 +1,40 @@
+TootHead {
+    layout: horizontal;
+    margin: 0 0 1 0;
+}
+
+.dot {
+    color: $text-muted;
+}
+
+.username {
+    color: $secondary;
+}
+
+.acctname {
+    color: $text-muted;
+}
+
+.timestamp {
+    color: $text-muted;
+}
+
+.media {
+    color: $accent;
+    outline: $success;
+    width: auto;
+    padding: 1;
+}
+
+ListItem {
+    padding: 2;
+    outline: wide $primary;
+}
+
+ListView {
+    margin: 0 2;
+}
+
+ListView:focus > ListItem.--highlight {
+    background: $primary-background-darken-2;
+}

@@ -1,29 +1,33 @@
-# README #
+# Textodon #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+View public Mastodon feeds in your terminal.
 
-### What is this repository for? ###
+### Installation ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+Clone the repository, and install these dependencies:
 
-### How do I get set up? ###
+- requests
+- rich
+- textual
+- html2text
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+They may be installed by running:
 
-### Contribution guidelines ###
+    pip install -r requirements.txt
 
-* Writing tests
-* Code review
-* Other guidelines
+from the respository location.
 
-### Who do I talk to? ###
 
-* Repo owner or admin
-* Other community or team contact
+### Usage ###
+
+To start the feed viewer, run:
+
+    python textodon.py
+
+This uses the [universeodon.com](https://universeodon.com) instance by default. To change instances:
+
+    python textodon.py [instanceurl]
+
+To set the number of posts to fetch to 100:
+
+    python textodon.py [instanceurl] -L 100
