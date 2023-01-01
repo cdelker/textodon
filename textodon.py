@@ -28,9 +28,12 @@ class TootHead(Static):
         acct = self.toot['account']['acct']
         timedelta = (datetime.utcnow() - datetime.fromisoformat(
             self.toot['created_at'].rstrip('Z')))
-        minutesago = timedelta.seconds // 60
-        hoursago = minutesago // 60
-        if hoursago:
+        minutesago = int(timedelta.total_seconds() / 60)
+        hoursago = int(minutesago / 60)
+        daysago = int(hoursago / 24)
+        if daysago:
+            timestr = f'{daysago}d'
+        elif hoursago:
             timestr = f'{hoursago}h'
         else:
             timestr = f'{minutesago}m'
